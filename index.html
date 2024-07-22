@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mahsa Abdollahi Mirzanagh, 400355424">
+<meta name="dcterms.date" content="2024-07-22">
+
+<title>Data Science for Business</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science Final Project</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data Science for Business</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Data Science Final Project</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract"><span class="header-section-number">1</span> Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#for-github-implementation" id="toc-for-github-implementation" class="nav-link" data-scroll-target="#for-github-implementation"><span class="header-section-number">3</span> for github implementation:</a></li>
+  <li><a href="#loading-the-initial-libraries-and-data" id="toc-loading-the-initial-libraries-and-data" class="nav-link" data-scroll-target="#loading-the-initial-libraries-and-data"><span class="header-section-number">4</span> <strong>Loading the Initial libraries and data</strong></a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">5</span> <strong>Analysis</strong></a>
+  <ul class="collapse">
+  <li><a href="#figure-1-association-between-adult-and-child-outcomes-and-neighborhood-poverty" id="toc-figure-1-association-between-adult-and-child-outcomes-and-neighborhood-poverty" class="nav-link" data-scroll-target="#figure-1-association-between-adult-and-child-outcomes-and-neighborhood-poverty"><span class="header-section-number">5.1</span> Figure 1: Association Between Adult and Child Outcomes and Neighborhood Poverty</a></li>
+  <li><a href="#table1" id="toc-table1" class="nav-link" data-scroll-target="#table1"><span class="header-section-number">5.2</span> <strong>Table1</strong></a></li>
+  <li><a href="#associations-between-adult-and-child-outcomes-and-neighborhood-poverty" id="toc-associations-between-adult-and-child-outcomes-and-neighborhood-poverty" class="nav-link" data-scroll-target="#associations-between-adult-and-child-outcomes-and-neighborhood-poverty"><span class="header-section-number">5.3</span> <strong>Associations between Adult and Child Outcomes and Neighborhood Poverty</strong></a></li>
+  <li><a href="#table1-1" id="toc-table1-1" class="nav-link" data-scroll-target="#table1-1"><span class="header-section-number">5.4</span> <strong>Table1</strong></a></li>
+  </ul></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github"><span class="header-section-number">6</span> GitHub</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
+  <li><a href="#affidavit" id="toc-affidavit" class="nav-link" data-scroll-target="#affidavit"><span class="header-section-number">8</span> Affidavit</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Science for Business</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mahsa Abdollahi Mirzanagh, 400355424 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 22, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Abstract</h1>
+<p>This report presents a replication of a previous study that investigates the influence of neighborhood poverty on various socio-economic outcomes with R programming language. Utilizing publicly available U.S. data, the analysis focuses on multiple geographic scales, including commuting zones, school districts, and census tracts, to explore how poverty rates affect indicators such as employment rates, life expectancy, upward mobility, and academic achievement.</p>
+<p>The replication involves a detailed examination of these relationships, highlighting significant associations between higher poverty rates and poorer outcomes across all metrics. Specifically, increased poverty is shown to correlate with lower adult employment rates, reduced life expectancy, diminished upward mobility for children, and lower levels of academic achievement. The replication confirms the original study’s results and offers further insights into the effects of neighborhood poverty on individual and family well-being, emphasizing the critical role of residential environments in shaping socio-economic outcomes.</p>
+</section>
+<section id="introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
+<p>“Social scientists have long hypothesized that living in a disadvantaged area directly affects the outcomes of adults and life courses of children. Descriptive research has supported this idea by showing that individuals living in high-poverty areas fare worse both contemporaneously and over the long-run in terms of important outcomes such as education, criminal involvement, health, and earnings (Wilson 1987; Jencks and Mayer 1990; Brooks-Gunn et al.1993; Sampson, Morenoff, and Gannon-Rowley 2002; Sharkey and Faber 2014).” ( Chyn and F.Katz, 2021, P.197)</p>
+<p>In <em>“Neighborhoods Matter: Assessing the Evidence for Place Effects”</em>, Eric Chyn and Lawrence F.Katz explore the relationship between neighborhood poverty and various socio-economic outcomes, including employment rates, life expectancy, upward mobility, and academic achievement by Using a dataset comprising these indicators at different geographic levels. This report reproduce the original analyses and visualizations done by Chyn and F.Katz , specifically focusing on bin scatter plots and linear regression models using the statistical programming language R.</p>
+<p>Our replication confirms the original study’s findings that neighborhood poverty significantly correlates with adverse socio-economic outcomes. However, we critique the use of bin scatter plots for potentially oversimplifying the data , which could lead to misleading interpretations. Instead, we advocate for a more detailed visualization approach that retains individual data points to better capture the underlying variability.</p>
+<p>This section utilizes publicly available U.S. data to replicate the analysis of how place of residence influences various outcomes. Following the methodology of previous studies on neighborhood effects, the analysis focuses on several geographical units. The largest units considered are commuting zones, which are groups of counties based on commuting patterns from the 1990 Census, approximating local labor markets. There are 741 commuting zones in the U.S. Additionally, more detailed levels such as over 12,000 school districts and approximately 72,000 census tracts are examined, with census tracts typically encompassing a few thousand residents and closely resembling what is commonly known as a “neighborhood.”</p>
+<p>To classify these geographic areas by economic opportunity, the poverty rate from the 2000 Decennial Census is used. Poverty rates are a widely used measure in neighborhood effects research (Sampson and Sharkey 2008) and can be broadly interpreted as a summary index of the bundle of characteristics associated with a neighborhood (Kling, Liebman, and Katz 2007).</p>
+<p>Figure 1 illustrates a strong association between an area’s poverty rate and various outcomes for adults and children. Each panel plots averages based on grouping commuting zones (in panels A, B, and C) or school districts (in panel D) into one of 20 “bins” by poverty rate. The results in panel A show that a one percentage point increase in the poverty rate in a commuting zone is associated with a 0.8 percentage point decline in the adult employment rate using data from the 2000 U.S. Census. Panel B shows that adult health, as measured by life expectancy at age 40, also decreases with the poverty rate. Life expectancy is measured using data from Chetty et al.&nbsp;(2016a) and is based on mortality records from the Social Security Administration.</p>
+<p>The results in Figure 1 also show that upward mobility and academic achievement of children both decrease with the poverty rate. The measure of upward mobility is the mean household income (measured at ages 31–37) for children who grew up in each commuting zone and were born to low-income parents (those at the 25th percentile of the income distribution) from the Opportunity Atlas (Chetty et al.&nbsp;2020a). The measure of achievement is based on the mean of standardized test scores for school districts from the Stanford Education Data Archive. Panels C and D of Figure 1 show that a one percentage point increase in the poverty rate is associated with declines of $371 in a child’s expected adult income and 0.025 standard deviations in academic achievement, respectively. All the relationships in Figure 1 are statistically significant at the 1 percent level, as indicated in the regression results reported in columns 1–4 of Table 1.</p>
+<section id="figure-1-description" class="level4" data-number="2.0.0.1">
+<h4 data-number="2.0.0.1" class="anchored" data-anchor-id="figure-1-description"><span class="header-section-number">2.0.0.1</span> Figure 1 Description</h4>
+<p>This figure provides binned scatter plots of the relationship between the poverty rate and the following measures of average resident outcomes: employment rates, life expectancy, upward mobility, and test scores. The unit of analysis in panels A, B, and C is a commuting zone. In panel D, the unit of analysis is a school district.</p>
+</section>
+<section id="table-1-description" class="level4" data-number="2.0.0.2">
+<h4 data-number="2.0.0.2" class="anchored" data-anchor-id="table-1-description"><span class="header-section-number">2.0.0.2</span> Table 1 Description</h4>
+<p>Table 1 reports estimates from a regression model where the dependent variable is a measure of adult or child outcomes (specified in each column header) in a geographic area. Geographic areas are commuting zones (CZ), school districts, or Census tracts. The independent variable of interest is a location-specific measure of the poverty rate (the fraction of residents living below the poverty line). Columns 1, 2, 3, 5, and 6 use poverty rates from the 2000 Decennial Census. Column 4 uses poverty rates averaged over 2007–2016 from the American Community Survey (the combined files for the years 2007-2011 and 2012–2016). The dependent variables in columns 1 and 5 are measures from the 2000 Decennial Census. Column 2 uses the life expectancy measure from Chetty et al.&nbsp;(2016a,b) based on mortality data from Social Security Administration death records. Columns 3 and 6 use the “Upward Mobility” measure from the Opportunity Atlas (Chetty et al.&nbsp;2020a,b), which is the mean later-life household income rank (measured at ages 31–37) for children whose parents were at the twenty-fifth percentile of the national income distribution. Column 4 uses the test-based achievement measure from the Stanford Education Data Archive (SEDA), which is an estimate of mean test scores on a cohort-standardized scale. The test score means are constructed using data from the National Assessment of Educational Progress (NAEP), as detailed in Fahle et al.&nbsp;(2019). Standard errors are clustered at the county level in columns 5 and 6. The correlations between the poverty rate and outcomes are not simply due to broad differences across metropolitan areas. Columns 5 and 6 of Table 1 present correlations between poverty rates and resident outcomes at the census-tract level using data on all U.S. tracts and specifications that control for county fixed effects. These within-county results generate estimates similar to those observed in the commuting-zone level analysis.</p>
+</section>
+</section>
+<section id="for-github-implementation" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> for github implementation:</h1>
+<p>if (!require(pacman)) install.packages(“pacman”) pacman::p_load(usethis) create_github_token()</p>
+</section>
+<section id="loading-the-initial-libraries-and-data" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <strong>Loading the Initial libraries and data</strong></h1>
+<p>For starting fresh without any lingering variables or data frames from previous work, it is useful to remove all objects from the current workspace.</p>
+<p>To ensure our environment is properly set up, we begin by verifying the installation of essential packages. The first line checks whether the <code>pacman</code> package is already installed. If it is not, it installs <code>pacman</code>. This is crucial as <code>pacman</code> simplifies the process of loading and managing other packages.</p>
+<p><code>ggplot2</code> is fundamental for creating advanced and customizable graphics, whereas <code>haven</code> allows us to seamlessly import data type ‘.dta’ from the files attached to the original paper.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: pacman</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Loading required package: pacman</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, haven)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This line of code sets the working directory to the specified path on the computer.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#setting the working directory</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">'C:/OLD Asus/Cdoc/Hs-Fresenius/PDFs/Third Semester/Data Science/Project/142621-V1/Data Science for Business Final Project'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To analyze various socioeconomic outcomes at different levels of aggregation, we need to load the relevant datasets. Each dataset corresponds to different figures and tables that illustrate these outcomes. We use the <code>read_dta</code> function from the <code>haven</code> package to load Stata files into R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#loading the data sets</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># first figure (employment rate(CZ Level))</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>cz_adult_emp_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">cz_adult_emp_pov.dta"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># second figure (life expectancy (CZ Level))</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>cz_life_expect_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">cz_life_expect_pov.dta"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># third figure (Upward mobility(CZ Level))</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>cz_upward_mobility_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">cz_upward_mobility_pov.dta"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># fourth figure (mean test score(CZ Level))</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>district_test_scores_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">district_test_scores_pov.dta"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#loading Table1 related data</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># fifth dataset(tract_adult_emp)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>tract_adult_emp_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">tract_adult_emp_pov.dta"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#sixth dataset(tract_upward_mobility)</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>tract_upward_mobility_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">tract_upward_mobility_pov.dta"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#seventh datasets(district_test_scores)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>district_test_scores_pov <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"Replication_Data</span><span class="sc">\\</span><span class="st">district_test_scores_pov.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="analysis" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <strong>Analysis</strong></h1>
+<section id="figure-1-association-between-adult-and-child-outcomes-and-neighborhood-poverty" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="figure-1-association-between-adult-and-child-outcomes-and-neighborhood-poverty"><span class="header-section-number">5.1</span> Figure 1: Association Between Adult and Child Outcomes and Neighborhood Poverty</h2>
+<p>Figure 1 illustrates a strong association between an area’s poverty rate and various outcomes for both adults and children. The data is grouped into 20 “bins” based on poverty rate, with different panels representing different outcomes and geographic levels.</p>
+<section id="panel-a.-adult-employment-rate-2000" class="level4" data-number="5.1.0.1">
+<h4 data-number="5.1.0.1" class="anchored" data-anchor-id="panel-a.-adult-employment-rate-2000"><span class="header-section-number">5.1.0.1</span> <strong>Panel A. Adult employment rate 2000</strong></h4>
+<p>Panel A shows the relationship between poverty rates and adult employment rates at the level of commuting zones. The data indicates that for each one percentage point increase in a commuting zone’s poverty rate, there is a corresponding 0.8 percentage point decrease in adult employment rates. This data is derived from the 2000 US Census. In this section, we will analyze the adult employment rate at the Commuting Zone (CZ) level.</p>
+<section id="loading-and-inspecting-the-data" class="level5" data-number="5.1.0.1.1">
+<h5 data-number="5.1.0.1.1" class="anchored" data-anchor-id="loading-and-inspecting-the-data"><span class="header-section-number">5.1.0.1.1</span> <strong>Loading and Inspecting the Data</strong>:</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Panel A. Adult employment rate (2000)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting the first few rows of the data</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cz_adult_emp_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+     cz czname         emp2000 pov_rate
+  &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt;
+1   100 Johnson City     0.558     14.0
+2   200 Morristown       0.589     14.4
+3   301 Middlesborough   0.443     26.8
+4   302 Knoxville        0.589     13.0
+5   401 Winston-Salem    0.629     10.6
+6   402 Martinsville     0.565     13.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(emp2000 <span class="sc">~</span> pov_rate , <span class="at">data =</span> cz_adult_emp_pov)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = emp2000 ~ pov_rate, data = cz_adult_emp_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+   0.696980    -0.008208  </code></pre>
+</div>
+</div>
+</section>
+<section id="standard-scatter-plot-with-linear-regression" class="level5" data-number="5.1.0.1.2">
+<h5 data-number="5.1.0.1.2" class="anchored" data-anchor-id="standard-scatter-plot-with-linear-regression"><span class="header-section-number">5.1.0.1.2</span> <strong>Standard Scatter Plot with Linear Regression</strong>:</h5>
+<p>ggplot(): Creates a scatter plot of emp2000 against pov_rate.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Normal plot</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the scatter plot</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cz_adult_emp_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> emp2000)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co">#Adds a linear regression line (method = "lm").</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point)"</span>, <span class="at">y =</span> <span class="st">"Adult employment rate (CZ_level)"</span> ,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Panel A. Adult employment rate (2000)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="binned-scatter-plot" class="level5" data-number="5.1.0.1.3">
+<h5 data-number="5.1.0.1.3" class="anchored" data-anchor-id="binned-scatter-plot"><span class="header-section-number">5.1.0.1.3</span> <strong>Binned Scatter Plot</strong>:</h5>
+<p>As also discussed by Cattaneo et al.&nbsp;(2024),to generate a binned scatter plot, I used the <code>binsreg</code> function from the <code>binsreg</code> package. This function divides the data into 20 bins (<code>nbins = 20</code>) based on the poverty rate (<code>pov_rate</code>) in the <code>cz_adult_emp_pov</code> dataset. The <code>binsreg</code> function fits a polynomial regression of degree 1 (<code>polyreg = 1</code>) to each bin, without displaying confidence intervals (<code>ci = FALSE</code>).</p>
+<p>This approach allows for a segmented view of how adult employment rates (<code>emp2000</code>) vary with changes in poverty rates (<code>pov_rate</code>), providing insights into potential nonlinear relationships that may exist within the data.</p>
+<p>To customize the appearance of the binned scatter plot, I applied the <code>theme_minimal()</code> function for a clean visual style. Initially, I attempted to change the color of the regression line using <code>geom_smooth(method = "lm", se = FALSE, color = "red")</code>. However, despite specifying red as the color, the plot did not reflect this change. To address this, I manually added a separate <code>geom_smooth()</code> layer with the desired color adjustment.</p>
+<p>This discrepancy likely arises from the internal plot construction of the <code>binsreg</code> package. Sometimes, specialized plotting functions such as those in <code>binsreg</code> may impose limitations on directly modifying or adding layers using standard <code>ggplot2</code> functions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#binned scatter plot</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(ggplot2, binsreg, haven, dplyr)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(binsreg)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the binned scatter plot</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>binsreg_result <span class="ot">&lt;-</span> <span class="fu">binsreg</span>(</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> cz_adult_emp_pov<span class="sc">$</span>emp2000,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> cz_adult_emp_pov<span class="sc">$</span>pov_rate,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">nbins =</span> <span class="dv">20</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">polyreg =</span> <span class="dv">1</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Customizing the plot using ggplot2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>binsreg_plot <span class="ot">&lt;-</span> binsreg_result<span class="sc">$</span>bins_plot <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Adult employment rate (CZ-level)"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Panel A. Adult employment rate (2000)"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>)  <span class="co"># Change the line color to red</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#so i add it manually</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>binsreg_plot <span class="ot">&lt;-</span> binsreg_plot <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> cz_adult_emp_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> emp2000), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing the customized plot</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(binsreg_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>ntile</code> function from <code>dplyr</code> is used to divide the <code>pov_rate</code> variable into 20 quantiles (<code>n = 20</code>), and each observation is assigned to a corresponding bin (<code>bin</code>).</p>
+<p><code>summarise</code> calculates the mean values of <code>emp2000</code> (employment rate) and <code>pov_rate</code> (poverty rate) for each bin, stored in <code>new_cz_adult_emp_pov</code>.</p>
+<p><code>ggplot</code> creates a scatter plot (<code>geom_point</code>) where <code>pov_rate_mean</code> is plotted on the x-axis and <code>emp2000_mean</code> on the y-axis.</p>
+<p><code>geom_smooth(method = "lm", se = FALSE)</code> adds a linear regression line (<code>method = "lm"</code>) to show the overall trend between poverty rate and employment rate without displaying standard error (<code>se = FALSE</code>).</p>
+<p><code>labs</code> sets the axis labels and plot title.</p>
+<p><code>theme_minimal()</code> adjusts the plot theme for a cleaner appearance.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The method for creating binned scatter plots is well-documented (Lost Stats, n.d.).</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 20 quantiles using y and assign observations to bins</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>cz_adult_emp_pov <span class="ot">=</span> cz_adult_emp_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of employment rate (emp2000) and poverty rate (pov_rate) for each bin</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>new_cz_adult_emp_pov <span class="ot">=</span> cz_adult_emp_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">emp2000_mean =</span> <span class="fu">mean</span>(emp2000), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate))</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatter plot with a linear regression line</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_cz_adult_emp_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> emp2000_mean)) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>, <span class="at">y =</span> <span class="st">"Employment rate (2000)"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Panel A. Adult employment rate (2000)"</span>) <span class="sc">+</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Each panel follows a similar structure:</p>
+<ul>
+<li><p>Fit a linear model (<code>lm()</code>) relating a variable to <code>pov_rate</code>.</p></li>
+<li><p>Create a normal plot (<code>ggplot()</code> + <code>geom_point()</code> + <code>stat_smooth()</code>).</p></li>
+<li><p>Create a binned scatter plot (<code>binsreg()</code> + <code>geom_smooth()</code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="panel-b.-life-expectancy" class="level4" data-number="5.1.0.2">
+<h4 data-number="5.1.0.2" class="anchored" data-anchor-id="panel-b.-life-expectancy"><span class="header-section-number">5.1.0.2</span> <strong>Panel B. Life expectancy</strong></h4>
+<p>Panel B highlights the correlation between poverty rates and life expectancy at age 40 for adults. It demonstrates that higher poverty rates are linked to lower life expectancy. The life expectancy data comes from Chetty et al.&nbsp;(2016a) and is based on mortality records from the Social Security Administration.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel B. life expectancy (CZ-Level)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cz_life_expect_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+     cz czname         le_agg pov_rate
+  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt;
+1   100 Johnson City     82.2     14.0
+2   200 Morristown       81.5     14.4
+3   301 Middlesborough   81.9     26.8
+4   302 Knoxville        82.5     13.0
+5   401 Winston-Salem    82.6     10.6
+6   402 Martinsville     82.0     13.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(le_agg <span class="sc">~</span> pov_rate , <span class="at">data =</span> cz_life_expect_pov)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = le_agg ~ pov_rate, data = cz_life_expect_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+    84.1113      -0.1091  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cz_life_expect_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> le_agg)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>, <span class="at">y =</span> <span class="st">"Life expectancy (CZ-level)"</span>,<span class="at">title =</span> <span class="st">"Panel B. life expectancy (CZ-Level)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cz_life_expect_pov <span class="ot">=</span> cz_life_expect_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of life expectancy (le_agg) and poverty rate (pov_rate) for each bin</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>new_cz_life_expect_pov <span class="ot">=</span> cz_life_expect_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">le_agg_mean =</span> <span class="fu">mean</span>(le_agg), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate))</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_cz_life_expect_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> le_agg_mean)) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>, <span class="at">y =</span> <span class="st">"Life expectancy (CZ-level)"</span>,<span class="at">title =</span> <span class="st">"Panel B. life expectancy (CZ-Level)"</span>) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="panel-c.-intergenerational-mobility-for-low-income-children" class="level4" data-number="5.1.0.3">
+<h4 data-number="5.1.0.3" class="anchored" data-anchor-id="panel-c.-intergenerational-mobility-for-low-income-children"><span class="header-section-number">5.1.0.3</span> <strong>Panel C. Intergenerational mobility for low-income children</strong></h4>
+<p>Panel C focuses on the impact of poverty rates on children’s upward mobility, measured by the mean household income at ages 31-37 for children who grew up in each commuting zone and were born to low-income parents (at the 25th percentile of the income distribution). According to data from the Opportunity Atlas (Chetty et al.&nbsp;2020a), a one percentage point increase in the poverty rate is associated with a $371 decrease in the expected adult income of these children.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel C. Intergenerational mobility for low-income children</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cz_upward_mobility_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+     cz czname         kfr_pooled_p25_cz pov_rate
+  &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;
+1   100 Johnson City              27755.     14.0
+2   200 Morristown                27514.     14.4
+3   301 Middlesborough            28746.     26.8
+4   302 Knoxville                 29040.     13.0
+5   401 Winston-Salem             28443.     10.6
+6   402 Martinsville              27650.     13.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(kfr_pooled_p25_cz <span class="sc">~</span> pov_rate , <span class="at">data =</span> cz_upward_mobility_pov)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = kfr_pooled_p25_cz ~ pov_rate, data = cz_upward_mobility_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+    40840.0       -371.5  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cz_upward_mobility_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> kfr_pooled_p25_cz)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>, <span class="at">y =</span> <span class="st">"Upward mobility, p25 (CZ-level)"</span>, <span class="at">title =</span> <span class="st">"Panel C. Intergenerational mobility for low-income children"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>cz_upward_mobility_pov <span class="ot">=</span> cz_upward_mobility_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of upward mobility (kfr_pooled_p25_cz) and poverty rate (pov_rate) for each bin</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>new_cz_upward_mobility_pov <span class="ot">=</span> cz_upward_mobility_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">kfr_pooled_p25_cz_mean =</span> <span class="fu">mean</span>(kfr_pooled_p25_cz), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate))</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_cz_upward_mobility_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> kfr_pooled_p25_cz_mean)) <span class="sc">+</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty rate (percentage point) "</span>, <span class="at">y =</span> <span class="st">"Upward mobility, p25 (CZ-level)"</span>, <span class="at">title =</span> <span class="st">"Panel C. Intergenerational mobility for low-income children"</span>) <span class="sc">+</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range (`stat_smooth()`).
+Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="panel-d.-academic-achievement" class="level4" data-number="5.1.0.4">
+<h4 data-number="5.1.0.4" class="anchored" data-anchor-id="panel-d.-academic-achievement"><span class="header-section-number">5.1.0.4</span> <strong>Panel D. Academic achievement</strong></h4>
+<p>Panel D examines the effect of poverty rates on academic achievement for children, using mean standardized test scores for school districts from the Stanford Education Data Archive. The results show that a one percentage point increase in the poverty rate corresponds with a 0.025 standard deviation decrease in academic achievement.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel D. Academic achievement</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(district_test_scores_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  leaidC  mn_avg_ol pov_rate
+  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;
+1 0100002    NA        NA   
+2 0100005    -0.291    39.4 
+3 0100006    -0.187    26.0 
+4 0100007     0.229     8.60
+5 0100008     0.475     7.11
+6 0100009    NA        NA   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(mn_avg_ol <span class="sc">~</span> pov_rate , <span class="at">data =</span> district_test_scores_pov)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mn_avg_ol ~ pov_rate, data = district_test_scores_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+     0.4451      -0.0248  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(district_test_scores_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> mn_avg_ol)) <span class="sc">+</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate (percentage point)"</span>, <span class="at">y =</span> <span class="st">"Mean Test Score (SD level)"</span>, <span class="at">title =</span> <span class="st">"Panel D. Academic achievement"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 559 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 559 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>district_test_scores_pov <span class="ot">=</span> district_test_scores_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of mean test score (mn_avg_ol) and poverty rate (pov_rate) for each bin</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>new_district_test_scores_pov <span class="ot">=</span> district_test_scores_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mn_avg_ol_mean =</span> <span class="fu">mean</span>(mn_avg_ol), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate))</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_district_test_scores_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> mn_avg_ol_mean)) <span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate (percentage point)"</span>, <span class="at">y =</span> <span class="st">"Mean Test Score (SD level)"</span>, <span class="at">title =</span> <span class="st">"Panel D. Academic achievement"</span>) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Overall, Figure 1 underscores the significant negative impact that higher poverty rates have on crucial outcomes for both adults and children, highlighting the importance of addressing poverty to improve employment, health, upward mobility, and educational performance.</p>
+</section>
+</section>
+<section id="table1" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="table1"><span class="header-section-number">5.2</span> <strong>Table1</strong></h2>
+</section>
+<section id="associations-between-adult-and-child-outcomes-and-neighborhood-poverty" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="associations-between-adult-and-child-outcomes-and-neighborhood-poverty"><span class="header-section-number">5.3</span> <strong>Associations between Adult and Child Outcomes and Neighborhood Poverty</strong></h2>
+<section id="tract-adult-employment" class="level4" data-number="5.3.0.1">
+<h4 data-number="5.3.0.1" class="anchored" data-anchor-id="tract-adult-employment"><span class="header-section-number">5.3.0.1</span> <strong>Tract Adult Employment</strong></h4>
+<p>This code segment effectively visualizes how tract adult employment (measured by <code>emp2000</code>) varies with changes in poverty rates (<code>pov_rate</code>), both in a continuous scatter plot and a segmented binned scatter plot for deeper analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fifth dataset</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Panel E .tract adult employment</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tract_adult_emp_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  tract county state emp2000 fips  pov_rate
+  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+1 20100      1     1   0.567 01001    12.7 
+2 20200      1     1   0.493 01001    22.7 
+3 20300      1     1   0.579 01001     7.66
+4 20400      1     1   0.597 01001     4.55
+5 20500      1     1   0.661 01001     3.68
+6 20600      1     1   0.643 01001    15.2 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(emp2000 <span class="sc">~</span> pov_rate , <span class="at">data =</span> tract_adult_emp_pov)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = emp2000 ~ pov_rate, data = tract_adult_emp_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+   0.672416    -0.006069  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tract_adult_emp_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> emp2000)) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Tract Adult Employment"</span>, <span class="at">title =</span> <span class="st">"Panel E. tract adult employment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1707 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1707 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>tract_adult_emp_pov <span class="ot">=</span> tract_adult_emp_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of emp2000 and pov_rate for each bin</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>new_tract_adult_emp_pov <span class="ot">=</span> tract_adult_emp_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">emp2000_mean =</span> <span class="fu">mean</span>(emp2000), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate)) </span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_tract_adult_emp_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> emp2000_mean)) <span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Tract Adult Employment"</span>, <span class="at">title =</span> <span class="st">"Panel E. tract adult employment"</span>) <span class="sc">+</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-12-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tract-upward-mobility" class="level4" data-number="5.3.0.2">
+<h4 data-number="5.3.0.2" class="anchored" data-anchor-id="tract-upward-mobility"><span class="header-section-number">5.3.0.2</span> <strong>Tract Upward Mobility</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sixth dataset</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Panel F. tract upward mobility</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tract_upward_mobility_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  tract county state kfr_pooled_p25 fips  pov_rate
+  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+1 20100      1     1         27621. 01001    12.7 
+2 20200      1     1         22303. 01001    22.7 
+3 20300      1     1         28215. 01001     7.66
+4 20400      1     1         33331. 01001     4.55
+5 20500      1     1         34633. 01001     3.68
+6 20600      1     1         23583. 01001    15.2 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(kfr_pooled_p25 <span class="sc">~</span> pov_rate , <span class="at">data =</span> tract_upward_mobility_pov)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = kfr_pooled_p25 ~ pov_rate, data = tract_upward_mobility_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+    39465.0       -391.5  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tract_upward_mobility_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> kfr_pooled_p25)) <span class="sc">+</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Track Upward Mobility"</span>, <span class="at">title =</span> <span class="st">"Panel F. tract upward mobility"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1355 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1355 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binned scatter plot with binsreg</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>tract_upward_mobility_pov <span class="ot">=</span> tract_upward_mobility_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of kfr_pooled_p25 and pov_rate for each bin</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>new_tract_upward_mobility_pov <span class="ot">=</span> tract_upward_mobility_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">kfr_pooled_p25_mean =</span> <span class="fu">mean</span>(kfr_pooled_p25, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate)) </span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_tract_upward_mobility_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> kfr_pooled_p25_mean)) <span class="sc">+</span></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Track Upward Mobility"</span>, <span class="at">title =</span> <span class="st">"Panel F. tract upward mobility"</span>) <span class="sc">+</span></span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="district-test-score" class="level4" data-number="5.3.0.3">
+<h4 data-number="5.3.0.3" class="anchored" data-anchor-id="district-test-score"><span class="header-section-number">5.3.0.3</span> <strong>District Test Score</strong></h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#seventh datasets</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Panel G. district test scores</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading and inspecting the data</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(district_test_scores_pov)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  leaidC  mn_avg_ol pov_rate   bin
+  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1 0100002    NA        NA       NA
+2 0100005    -0.291    39.4     20
+3 0100006    -0.187    26.0     18
+4 0100007     0.229     8.60     4
+5 0100008     0.475     7.11     3
+6 0100009    NA        NA       NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting a linear regression model</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>model<span class="ot">&lt;-</span><span class="fu">lm</span>(mn_avg_ol <span class="sc">~</span> pov_rate , <span class="at">data =</span> district_test_scores_pov)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mn_avg_ol ~ pov_rate, data = district_test_scores_pov)
+
+Coefficients:
+(Intercept)     pov_rate  
+     0.4451      -0.0248  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal plot with ggplot2</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(district_test_scores_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate, <span class="at">y =</span> mn_avg_ol)) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Mean Test Score"</span>, <span class="at">title =</span> <span class="st">"Panel G. district test scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 559 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 559 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binned scatter plot with binsreg</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create quantiles based on poverty rate (pov_rate) and assign observations to bins</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>district_test_scores_pov <span class="ot">=</span> district_test_scores_pov <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">ntile</span>(pov_rate, <span class="at">n=</span><span class="dv">20</span>))</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean values of mn_avg_ol and pov_rate for each bin</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>new_district_test_scores_pov <span class="ot">=</span> district_test_scores_pov <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mn_avg_ol_mean =</span> <span class="fu">mean</span>(mn_avg_ol), <span class="at">pov_rate_mean =</span> <span class="fu">mean</span>(pov_rate)) <span class="co">#find the x and y mean of each bin</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the binned scatter plot with a linear regression line</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(new_district_test_scores_pov, <span class="fu">aes</span>(<span class="at">x =</span> pov_rate_mean, <span class="at">y =</span> mn_avg_ol_mean)) <span class="sc">+</span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Poverty Rate"</span>, <span class="at">y =</span> <span class="st">"Mean Test Score"</span>, <span class="at">title =</span> <span class="st">"Panel G. district test scores"</span>) <span class="sc">+</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="critique-of-bin-scatter-plot-usage" class="level4" data-number="5.3.0.4">
+<h4 data-number="5.3.0.4" class="anchored" data-anchor-id="critique-of-bin-scatter-plot-usage"><span class="header-section-number">5.3.0.4</span> Critique of Bin Scatter Plot Usage</h4>
+<p>While bin scatter plots can simplify visualization, they may also obscure important details. Here, I’ll outline why displaying all 700 observations, despite being crowded, is preferable to using bin scatter plots in this context.</p>
+</section>
+<section id="the-issue-with-bin-scatter-plots" class="level4" data-number="5.3.0.5">
+<h4 data-number="5.3.0.5" class="anchored" data-anchor-id="the-issue-with-bin-scatter-plots"><span class="header-section-number">5.3.0.5</span> The Issue with Bin Scatter Plots</h4>
+<p>Bin scatter plots average data within each bin, often removing outliers. This can make the relationship appear cleaner and more convincing than it truly is. By averaging, bin scatter plots might suggest a perfect explanation of the data, which is misleading. The process of binning cuts out valid information. Outliers and data variability, which can be critical for understanding the true nature of the data, are lost. The averages might align closely with the regression line, giving a false impression of a higher R-squared value.</p>
+<p>While the raw data plot is crowded, it provides a complete picture, including variability and outliers. Simplifying visualization with bins is not necessary when the data can be displayed in full. This preserves the integrity of the information presented.</p>
+</section>
+<section id="importance-of-r-squared" class="level4" data-number="5.3.0.6">
+<h4 data-number="5.3.0.6" class="anchored" data-anchor-id="importance-of-r-squared"><span class="header-section-number">5.3.0.6</span> Importance of R-squared</h4>
+<p>In our analysis, the R-squared value is around 0.50. This means only 50% of the variation is explained by the poverty rate, with the remaining 50% unexplained. An R-squared of 1 indicates that all data points lie exactly on the regression line, while an R-squared of 0 suggests no explanatory power. The proximity of data points to the regression line influences the R-squared value. The closer the points, the higher the R-squared. In bin scatter plots, the apparent closeness of data points to the line might inflate the perceived explanatory power, which is not the case with raw data plots.</p>
+</section>
+<section id="recommendations" class="level4" data-number="5.3.0.7">
+<h4 data-number="5.3.0.7" class="anchored" data-anchor-id="recommendations"><span class="header-section-number">5.3.0.7</span> Recommendations</h4>
+<p>If necessary, averages can be calculated within each poverty rate category manually or using functions in R. This should be done transparently to highlight the presence of outliers and variability. Presenting raw data, even if crowded, is crucial for maintaining transparency and integrity. Visual clutter can be managed with thoughtful use of plotting techniques, ensuring that important data points and variations are not lost.</p>
+<p>Although the paper briefly mentions the use of binned scatter plots, it is also beneficial to utilize the Stata solution provided with the replication package as a reference. Employing Stata can provide a clearer understanding of the methodology they used, which in turn can streamline the replication process in R. This approach can be particularly helpful for reducing the time and effort required to achieve similar results in R.</p>
+</section>
+</section>
+<section id="table1-1" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="table1-1"><span class="header-section-number">5.4</span> <strong>Table1</strong></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 1: Employment Rate (CZ)</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(emp2000 <span class="sc">~</span> pov_rate, <span class="at">data =</span> cz_adult_emp_pov)</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = emp2000 ~ pov_rate, data = cz_adult_emp_pov)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.159547 -0.023766  0.000398  0.025363  0.166849 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.6969800  0.0043892  158.79   &lt;2e-16 ***
+pov_rate    -0.0082076  0.0002825  -29.05   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.04371 on 739 degrees of freedom
+Multiple R-squared:  0.5331,    Adjusted R-squared:  0.5325 
+F-statistic: 843.9 on 1 and 739 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>mean_emp2000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(cz_adult_emp_pov<span class="sc">$</span>emp2000, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 2: Life Expectancy (CZ)</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(le_agg <span class="sc">~</span> pov_rate, <span class="at">data =</span> cz_life_expect_pov)</span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = le_agg ~ pov_rate, data = cz_life_expect_pov)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.3316 -0.7548 -0.0786  0.6652  3.8920 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 84.111297   0.119402  704.44   &lt;2e-16 ***
+pov_rate    -0.109057   0.007946  -13.73   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.015 on 593 degrees of freedom
+Multiple R-squared:  0.2411,    Adjusted R-squared:  0.2398 
+F-statistic: 188.4 on 1 and 593 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>mean_le_agg <span class="ot">&lt;-</span> <span class="fu">mean</span>(cz_life_expect_pov<span class="sc">$</span>le_agg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 3: Upward Mobility (CZ)</span></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(kfr_pooled_p25_cz <span class="sc">~</span> pov_rate, <span class="at">data =</span> cz_upward_mobility_pov)</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = kfr_pooled_p25_cz ~ pov_rate, data = cz_upward_mobility_pov)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-18366  -4241  -1114   3059  33404 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 40839.97     650.66  62.767   &lt;2e-16 ***
+pov_rate     -371.49      41.88  -8.869   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6480 on 739 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.09621,   Adjusted R-squared:  0.09499 
+F-statistic: 78.67 on 1 and 739 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>mean_kfr_pooled_p25_cz <span class="ot">&lt;-</span> <span class="fu">mean</span>(cz_upward_mobility_pov<span class="sc">$</span>kfr_pooled_p25_cz, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 4: Test Scores (School Districts)</span></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>model4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mn_avg_ol <span class="sc">~</span> pov_rate, <span class="at">data =</span> district_test_scores_pov)</span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mn_avg_ol ~ pov_rate, data = district_test_scores_pov)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.7568 -0.1467  0.0067  0.1553  1.1025 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.4450659  0.0046465   95.78   &lt;2e-16 ***
+pov_rate    -0.0247970  0.0002413 -102.75   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2469 on 12599 degrees of freedom
+  (559 observations deleted due to missingness)
+Multiple R-squared:  0.4559,    Adjusted R-squared:  0.4559 
+F-statistic: 1.056e+04 on 1 and 12599 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>mean_mn_avg_ol <span class="ot">&lt;-</span> <span class="fu">mean</span>(district_test_scores_pov<span class="sc">$</span>mn_avg_ol, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 5: Employment Rate (Tract)</span></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>model5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(emp2000 <span class="sc">~</span> pov_rate, <span class="at">data =</span> tract_adult_emp_pov)</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = emp2000 ~ pov_rate, data = tract_adult_emp_pov)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.67242 -0.04165  0.00640  0.05222  0.93447 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  6.724e-01  5.130e-04  1310.7   &lt;2e-16 ***
+pov_rate    -6.069e-03  3.031e-05  -200.2   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.08983 on 72414 degrees of freedom
+  (1707 observations deleted due to missingness)
+Multiple R-squared:  0.3563,    Adjusted R-squared:  0.3563 
+F-statistic: 4.009e+04 on 1 and 72414 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>mean_tract_emp2000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(tract_adult_emp_pov<span class="sc">$</span>emp2000, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1, Column 6: Upward Mobility (Tract)</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>model6 <span class="ot">&lt;-</span> <span class="fu">lm</span>(kfr_pooled_p25 <span class="sc">~</span> pov_rate, <span class="at">data =</span> tract_upward_mobility_pov)</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = kfr_pooled_p25 ~ pov_rate, data = tract_upward_mobility_pov)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-36504  -4746   -828   3729  68438 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 39464.981     40.186   982.1   &lt;2e-16 ***
+pov_rate     -391.460      2.396  -163.4   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6964 on 71921 degrees of freedom
+  (1355 observations deleted due to missingness)
+Multiple R-squared:  0.2706,    Adjusted R-squared:  0.2706 
+F-statistic: 2.668e+04 on 1 and 71921 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>mean_tract_kfr_pooled_p25 <span class="ot">&lt;-</span> <span class="fu">mean</span>(tract_upward_mobility_pov<span class="sc">$</span>kfr_pooled_p25, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code snippet you’ve provided fits linear models with county fixed effects using the <code>felm</code> function from the <code>lfe</code> package and obtains clustered standard errors for the models. By using <code>felm</code> and <code>vcovCL</code> from the <code>lfe</code> package, you’re able to fit linear models with fixed effects and calculate clustered standard errors, which are robust against heteroscedasticity and serial correlation within clusters (counties, in this case). These steps ensure that your model estimations account for potential clustering effects within counties, providing more reliable standard errors for inference.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(lfe)) <span class="fu">install.packages</span>(<span class="st">"lfe"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lfe</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lfe)</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the models with county fixed effects using lfe</span></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>model5_cluster <span class="ot">&lt;-</span> <span class="fu">felm</span>(emp2000 <span class="sc">~</span> pov_rate <span class="sc">|</span> county <span class="sc">|</span> <span class="dv">0</span> <span class="sc">|</span> county, <span class="at">data =</span> tract_adult_emp_pov)</span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>model6_cluster <span class="ot">&lt;-</span> <span class="fu">felm</span>(kfr_pooled_p25 <span class="sc">~</span> pov_rate <span class="sc">|</span> county <span class="sc">|</span> <span class="dv">0</span> <span class="sc">|</span> county, <span class="at">data =</span> tract_upward_mobility_pov)</span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(sandwich)) <span class="fu">install.packages</span>(<span class="st">"sandwich"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: sandwich</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain clustered standard errors</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>cluster_se_model5 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovCL</span>(model5_cluster, <span class="at">cluster =</span> <span class="sc">~</span> county)))</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>cluster_se_model6 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovCL</span>(model6_cluster, <span class="at">cluster =</span> <span class="sc">~</span> county)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>stargazer</code> package in R is commonly used to create well-formatted regression tables from various model objects.</p>
+<p><strong>Standard Errors (<code>se</code>)</strong>: If you have clustered standard errors (<code>clustered_se_5</code> and <code>clustered_se_6</code>), you can uncomment and use the <code>se</code> argument to include them in the table.</p>
+<ul>
+<li><p><code>stargazer()</code> function is used to generate the regression table.</p></li>
+<li><p>Arguments:</p>
+<ul>
+<li><p><code>model1, model2, ..., model6_cluster</code>: These are the regression model objects (<code>lm</code> or <code>felm</code>) that you want to include in the table.</p></li>
+<li><p><code>type = "text"</code>: Specifies that the output format should be plain text.</p></li>
+<li><p><code>title</code>: Title of the table.</p></li>
+<li><p><code>dep.var.labels</code>: Labels for the dependent variables.</p></li>
+<li><p><code>covariate.labels</code>: Label for the covariate.</p></li>
+<li><p><code>add.lines</code>: Additional lines to add to the table. Here, it includes the level of analysis, controls, and mean values for each outcome.</p></li>
+<li><p><code>omit.stat</code>: Specifies which statistics to omit from the table (in this case, F-statistic, standard error of the regression, and adjusted R-squared).</p></li>
+<li><p><code>no.space = TRUE</code>: Removes extra spaces in the output for a cleaner appearance.</p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(stargazer)) <span class="fu">install.packages</span>(<span class="st">"stargazer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: stargazer</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Please cite as: </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code> R package version 5.2.3. https://CRAN.R-project.org/package=stargazer </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Table 1</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(</span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>  model1, model2, model3, model4, model5_cluster, model6_cluster,</span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"text"</span>,</span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Table 1: Associations between Adult and Child Outcomes and Neighborhood Poverty"</span>,</span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">dep.var.labels =</span> <span class="fu">c</span>(<span class="st">"Adult employment Rate(2000)"</span>, <span class="st">"Life expectancy"</span>, <span class="st">"Upward Mobility, p25 parents"</span>, <span class="st">"Test-based achievement"</span>, <span class="st">"Adult employment Rate(2000)"</span>, <span class="st">"Upward Mobility, p25 parents"</span>),</span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">covariate.labels =</span> <span class="fu">c</span>(<span class="st">"Poverty Rate"</span>),</span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">add.lines =</span> <span class="fu">list</span>(</span>
+<span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"Level of Analysis"</span>, <span class="st">"CZ"</span>, <span class="st">"CZ"</span>, <span class="st">"CZ"</span>, <span class="st">"School District"</span>, <span class="st">"Tract"</span>, <span class="st">"Tract"</span>),</span>
+<span id="cb101-12"><a href="#cb101-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"Controls"</span>, <span class="st">"None"</span>, <span class="st">"None"</span>, <span class="st">"None"</span>, <span class="st">"None"</span>, <span class="st">"County FE "</span>, <span class="st">"County FE "</span>),</span>
+<span id="cb101-13"><a href="#cb101-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="fu">round</span>(mean_emp2000, <span class="dv">3</span>), <span class="fu">round</span>(mean_le_agg, <span class="dv">3</span>), <span class="fu">round</span>(mean_kfr_pooled_p25_cz, <span class="dv">3</span>), <span class="fu">round</span>(mean_mn_avg_ol, <span class="dv">3</span>), <span class="fu">round</span>(mean_tract_emp2000, <span class="dv">3</span>), <span class="fu">round</span>(mean_tract_kfr_pooled_p25, <span class="dv">3</span>))</span>
+<span id="cb101-14"><a href="#cb101-14" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb101-15"><a href="#cb101-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#se = list(NULL, NULL, NULL, NULL, clustered_se_5, clustered_se_6),</span></span>
+<span id="cb101-16"><a href="#cb101-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">omit.stat =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"ser"</span>, <span class="st">"adj.rsq"</span>), <span class="co">#This indicates that the F-statistic, standard error of the regression, and adjusted R-squared values are not shown in the table.</span></span>
+<span id="cb101-17"><a href="#cb101-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">no.space =</span> <span class="cn">TRUE</span></span>
+<span id="cb101-18"><a href="#cb101-18" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Table 1: Associations between Adult and Child Outcomes and Neighborhood Poverty
+==========================================================================================================================================================================
+                                                                                    Dependent variable:                                                                   
+                  --------------------------------------------------------------------------------------------------------------------------------------------------------
+                  Adult employment Rate(2000) Life expectancy Upward Mobility, p25 parents Test-based achievement Adult employment Rate(2000) Upward Mobility, p25 parents
+                              OLS                   OLS                   OLS                       OLS                      felm                         felm            
+                              (1)                   (2)                   (3)                       (4)                       (5)                         (6)             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Poverty Rate               -0.008***             -0.109***            -371.486***                -0.025***                 -0.006***                  -393.294***         
+                           (0.0003)               (0.008)               (41.884)                  (0.0002)                 (0.0001)                     (12.073)          
+Constant                   0.697***              84.111***           40,839.970***                0.445***                                                                
+                            (0.004)               (0.119)              (650.664)                  (0.005)                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Level of Analysis             CZ                    CZ                     CZ                 School District                Tract                       Tract            
+Controls                     None                  None                   None                      None                   County FE                   County FE          
+Mean                         0.578                82.575               35469.045                   0.018                     0.594                     34443.482          
+Observations                  741                   595                   741                      12,601                   72,416                       71,923           
+R2                           0.533                 0.241                 0.096                     0.456                     0.388                       0.325            
+==========================================================================================================================================================================
+Note:                                                                                                                                          *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p>This table presents regression estimates where the dependent variable is a measure of adult or child outcomes within a specific geographic area, such as commuting zones (CZ), school districts, or census tracts. The independent variable of interest is the area’s poverty rate, defined as the fraction of residents living below the poverty line. Here is a summary of the data sources and the outcomes measured in each column:</p>
+<ul>
+<li><p><strong>Columns 1 and 5:</strong> Dependent variables are measures from the 2000 Decennial Census.</p></li>
+<li><p><strong>Column 2:</strong> Life expectancy measure from Chetty et al.&nbsp;(2016a,b) based on Social Security Administration mortality data.</p></li>
+<li><p><strong>Columns 3 and 6:</strong> “Upward Mobility” measure from the Opportunity Atlas (Chetty et al.&nbsp;2020a,b), representing the mean household income rank at ages 31-37 for children whose parents were at the 25th percentile of the national income distribution.</p></li>
+<li><p><strong>Column 4:</strong> Test-based achievement measure from the Stanford Education Data Archive (SEDA), which estimates mean test scores on a cohort-standardized scale using data from the National Assessment of Educational Progress (NAEP) as detailed in Fahle et al.&nbsp;(2019).</p></li>
+</ul>
+<p>The poverty rates are primarily sourced from the 2000 Decennial Census, except for Column 4, which uses poverty rates averaged over 2007–2016 from the American Community Survey. Standard errors in Columns 5 and 6 are clustered at the county level.</p>
+<p>The key findings highlight the relationship between higher poverty rates and poorer outcomes, such as lower adult employment rates, reduced life expectancy, decreased upward mobility, and lower academic achievement. Notably, the correlations persist even when controlling for county fixed effects, indicating that the observed associations are not merely due to broad differences across metropolitan areas but are evident at more granular levels like census tracts.</p>
+</section>
+</section>
+<section id="github" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> GitHub</h1>
+<p><a href="https://mahsaabdollahim.github.io/Data_Science_Presentation" class="uri">https://mahsaabdollahim.github.io/Data_Science_Presentation</a></p>
+<p>Uploading Files to GitHub Repository To ensure the reproducibility and accessibility of our project’s data and code, we have uploaded all relevant files to a publicly accessible GitHub repository. The following steps outline the procedure used to upload these files:</p>
+<p>Repository Creation: 1. A new repository was created on GitHub to host the project’s files. This was accomplished by navigating to the GitHub website (https://github.com) and logging into the associated account. A new repository was then created and was named as MahsaAbdollahiM.github.io and initialized with a README file.</p>
+<ol start="2" type="1">
+<li>Local Repository Cloning: The newly created repository was cloned to a local machine to facilitate file management and version control. This was done using the Git command-line interface with the following commands:</li>
+</ol>
+<p>git clone https://github.com/MahsaAbdollahiM/MahsaAbdollahiM.github.io.git cd MahsaAbdollahiM.github.io</p>
+<ol start="3" type="1">
+<li>Adding Files to the Repository: The project files were then copied into the local repository directory. These files include all data sets, analysis scripts, and supplementary materials necessary for replication of the study. The files were staged for commit using the following command:</li>
+</ol>
+<p>git add .</p>
+<ol start="4" type="1">
+<li>Committing and Pushing Changes: A commit was created to record the addition of these files to the repository, accompanied by a descriptive message. The commit was then pushed to the remote repository on GitHub. This was executed with the following commands:</li>
+</ol>
+<p>git commit -m “Initial commit with project files” git push origin main Verification: The presence of the uploaded files was verified by accessing the GitHub repository through a web browser at the following URL: https://github.com/MahsaAbdollahiM/MahsaAbdollahiM.github.io/tree/main. This step ensured that all files were correctly uploaded and accessible.</p>
+</section>
+<section id="references" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
+<p>Cattaneo, M.D., Crump, R.K., Farrell, M.H. and Feng, Y., 2024. Online Appendix On Binscatter.</p>
+<p>Lost Stats. (n.d.). <em>Binned scatter plots and binning</em>. Retrieved from <a href="https://lost-stats.github.io/Presentation/Figures/binscatter.html" class="uri">https://lost-stats.github.io/Presentation/Figures/binscatter.html</a> .</p>
+</section>
+<section id="affidavit" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Affidavit</h1>
+<p>I hereby affirm that this submitted paper was authored unaided and solely by me. Addi tionally, no other sources than those in the reference list were used. Parts of this paper, including tables and figures, that have been taken either verbatim or analogously from other works have in each case been properly cited with regard to their origin and author ship. This paper either in parts or in its entirety, be it in the same or similar form, has not been submitted to any other examination board and has not been published. I have read the Handbook of Academic Writing by Hildebrandt and Nelke [2019] and have endeavored to comply with the guidelines and standards set forth therein. I acknowledge that the university may use plagiarism detection software to check my thesis. I agree to cooperate with any investigation of suspected plagiarism and to provide any additional information or evidence requested by the university. The report includes: □ About 4000 words (+/- 500). □ A title page with personal details (name, email, matriculation number). □ An abstract. □ A bibliography, created using BibTeX with APA citation style. □ The complete R code required to reproduce the results. □ Detailed instructions on data acquisition and importation into R. □ An introduction to guide the reader and a conclusion summarizing the work and discussing potential future extensions. □ All significant resources used in the report and R code development. □ The filled out Affidavit. □ A concise description of the successful use of Git and GitHub, as detailed here: make_a_pull_request. □ A concise description of the presentation published on GitHub. The project submission includes: □ The .qmd file(s) of the report. □ The _quarto.yml file of the report. □ The .pdf file of the report. □ The standalone .html file of the report. □ All necessary files (not available online) to reproduce the report and the R code. □ The standalone .html file of the presentation.</p>
+<p>Mahsa Abdollahi Mirzanagh, Cologne, 22.07.2024</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
